@@ -71,4 +71,4 @@ The following documentation is useful for making changes to the ```onload.js``` 
 If you are contributing code, please be sure that you __remove your instrumentation key__ from any code you 
 put in a pull request. This project is public, and anyone on the Internet can see it.
 
-For the full Contributing details, please see __[the root README](../adfsWebCustomization)__.
+For the full Contributing details, please see __[the root README](../README.md)__.
