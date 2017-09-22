@@ -25,12 +25,12 @@ English, you might need to make modifications to the JavaScript.
 
 2. Download the ```onload.js``` in this repo locally, and update the ```instrumentationKey``` under ```GenerateAppInsightsObject``` to be your Application Insights API key
 
-(For more details, see [Copy the instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key))
+     (For more details, see [Copy the instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key))
 
 3. Replace the ```onload.js``` in your ADFS environment with the ```onload.js``` from this project. Alternatively, if you already have content in your ```onload.js```, you 
 should append our content to yours. 
 
-(For more information, see [Advanced ADFS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages))
+     (For more information, see [Advanced ADFS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages))
 
 ## What Gets Tracked
 
