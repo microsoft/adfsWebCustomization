@@ -65,3 +65,10 @@ The following documentation is useful for making changes to the ```onload.js``` 
 * [Custom App Insights Collection](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-api-custom-events-metrics#_flushing-data)
 * [App Insights in JavaScript](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript)
 * [App Insights JavaScript GitHub](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
+
+## Contributing (Special Note)
+
+If you are contributing code, please be sure that you __remove your instrumentation key__ from any code you 
+put in a pull request. 
+
+For the full Contributing details, please see __[the root README](adfsWebCustomization)__.
