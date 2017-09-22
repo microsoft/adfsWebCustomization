@@ -30,6 +30,9 @@ English, you might need to make modifications to the JavaScript.
 3. Replace the ```onload.js``` in your ADFS environment with the ```onload.js``` from this project. Alternatively, if you already have content in your ```onload.js```, you 
 should append our content to yours. 
 
+    Note: It is *__highly__* recommended that you minify your ```onload.js``` before including it in a production environment. There are many popular tools online 
+    for minifying JavaScript code. Two popular choices are [minifier.org](http://www.minifier.org/) and [JSCompress](https://jscompress.com/).
+
      (For more information, see [Advanced ADFS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages))
 
 ## What Gets Tracked
