@@ -356,8 +356,8 @@ TelemetryManager = {
 };
 
 // Produce telemetry 
-if(console && _self.debugging) console.log("TelemetryManager: Start trying to produce telemetry");
+if(console) console.log("TelemetryManager: Start trying to produce telemetry");
 var pageTelemetryManager = TelemetryManager;
 pageTelemetryManager.Initialize();
 pageTelemetryManager.ProducePageDetectionTelemetry();
-if(console && _self.debugging) console.log("TelemetryManager: End trying to produce telemetry");
+if(console) console.log("TelemetryManager: End trying to produce telemetry");
