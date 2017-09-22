@@ -1,3 +1,8 @@
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the MIT License.
+
+
+
 Browser Sessions with Exactly 1 Unforced Prompt Per Week: 
 
 What percentage of browser sessions that are making requests to ADFS are receiving exactly 1 unforced prompt per week?

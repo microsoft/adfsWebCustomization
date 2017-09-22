@@ -5,6 +5,8 @@
 This project performs page detection of common, uncustomized ADFS web pages, and then uploads 
 telemetry about those pages to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
+Note that this customization DOES NOT send any telemetry to the Microsoft ADFS team. All telemetry is sent to your datastore only.
+
 This project also includes some useful analysis scripts you can run against your Application Insights datastore. 
 
 ## Requirements
@@ -21,11 +23,13 @@ English, you might need to make modifications to the JavaScript.
 
 1. Register for an [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) subscription
 
-2. In ```onload.js```, update the ```instrumentationKey``` under ```GenerateAppInsightsObject``` to be your Application Insights API key
+2. Download the ```onload.js``` in this repo locally, and update the ```instrumentationKey``` under ```GenerateAppInsightsObject``` to be your Application Insights API key
+
 (For more details, see [Copy the instrumentation key](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-create-new-resource#copy-the-instrumentation-key))
 
 3. Replace the ```onload.js``` in your ADFS environment with the ```onload.js``` from this project. Alternatively, if you already have content in your ```onload.js```, you 
 should append our content to yours. 
+
 (For more information, see [Advanced ADFS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages))
 
 ## What Gets Tracked

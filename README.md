@@ -4,7 +4,7 @@
 
 This repository contains useful web customizations for ADFS. The following customizations are currently included: 
 
-1. __[a relative link](pageDetectionTelemetry)__ - JavaScript customization to detect ADFS pages and upload telemetry 
+1. __[pageDetectionTelemetry](pageDetectionTelemetry)__ - JavaScript customization to detect ADFS pages and upload telemetry 
 to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
 ## Contributing
