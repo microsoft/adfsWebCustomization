@@ -81,9 +81,10 @@ TelemetryManager = {
      *      Phone Factor Authentication Options Page 
      */
     ProducePageDetectionTelemetry: function () {
-        if(console && _self.debugging) console.log("Enter: TelemetryManager.ProducePageDetectionTelemetry");
-
+        
         var _self = this;
+
+        if(console && _self.debugging) console.log("Enter: TelemetryManager.ProducePageDetectionTelemetry");
 
         //
         // Generic Page view tracking 
