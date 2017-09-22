@@ -16,12 +16,12 @@ TelemetryManager = {
         // Collect some page details for later 
         var NOT_SET_CONST = 'NOTSET';
         _self.currentUri = window.location.href.split('?')[0];
-        _self.mswtrealm = getQueryString("wtrealm") || NOT_SET_CONST;
+        _self.mswtrealm = _self.getQueryString("wtrealm") || NOT_SET_CONST;
         _self.decodedwtrealm = decodeURIComponent(_self.mswtrealm) || NOT_SET_CONST;
-        _self.requestID = getQueryString("client-request-id") || NOT_SET_CONST;
-        _self.wfresh = getQueryString("wfresh") || NOT_SET_CONST;
-        _self.wauth = getQueryString("wauth") || NOT_SET_CONST;
-        _self.debugging = getQueryString("debug") || NOT_SET_CONST;
+        _self.requestID = _self.getQueryString("client-request-id") || NOT_SET_CONST;
+        _self.wfresh = _self.getQueryString("wfresh") || NOT_SET_CONST;
+        _self.wauth = _self.getQueryString("wauth") || NOT_SET_CONST;
+        _self.debugging = _self.getQueryString("debug") || NOT_SET_CONST;
         _self.wauth = decodeURIComponent(_self.wauth);
         _self.Username = NOT_SET_CONST;
 
@@ -69,6 +69,18 @@ TelemetryManager = {
             instrumentationKey: "YOUR-KEY-HERE"
         });
     },
+
+    /*
+     * Helper function to get a querystring parameter 
+     */
+    getQueryString: function(qsName) {
+        qsName = qsName.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + qsName + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(location.href);
+        if (!results) return "";
+        if (!results[2]) return "";
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
 
     /*
      *  Produces all telemetry for the following pages: 
