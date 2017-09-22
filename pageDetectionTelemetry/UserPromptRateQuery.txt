@@ -1,0 +1,45 @@
+Browser Sessions with Exactly 1 Unforced Prompt Per Week: 
+
+What percentage of browser sessions that are making requests to ADFS are receiving exactly 1 unforced prompt per week?
+
+Important filters: 
+
+    • We remove all traffic from known web crawlers, as marked by the App Insights library (using Synthetic Source) 
+    • We remove all traffic for which there is no correlation ID set 
+    • We remove all traffic that appears abnormal, meaning traffic for which there is a high page refresh or page navigation rate 
+    • We remove traffic for users who only saw an error page 
+    • We remove all traffic that has a query parameter that would force a prompt ("wfresh = 0")
+
+Important Caveats: 
+
+    • Session_Id is not a good field to use for this analysis, because we are under-reporting when we use this field. For more details, see this discussion (https://docs.microsoft.com/en-us/azure/application-insights/app-insights-web-track-usage#Sessions)
+    • We count 2 or fewer prompts per session as a single user prompt, since some requests will have AuthSelect and MFA, which we count as 1 prompt 
+
+
+customEvents
+| where timestamp > ago(8d) and timestamp < ago(1d)
+| where isempty(operation_SyntheticSource)
+| where tostring(customDimensions.CorrelationID) != "NOTSET"
+| where tostring(customDimensions.wfresh) != "0"
+| summarize 
+    EventCount = count(),
+    DistinctEventCount = dcount(name),
+    FormsPromptCount = countif(name startswith "Forms"),
+    AuthPromptCount = countif(name startswith "AuthSelection" and customDimensions.SelectionMethod !has "auto"),
+    PFAPromptCount = countif(name startswith "Phone"),
+    EventNames = makelist(name) 
+    by CorrelationID = tostring(customDimensions.CorrelationID), session_Id
+| where (1.0 * DistinctEventCount) / (1.0 * EventCount) >= 0.35
+| extend WasFormsPrompted = iff(FormsPromptCount > 0, 1, 0)
+| extend WasAuthPrompted = iff(AuthPromptCount > 0, 1, 0) 
+| extend WasPFAPrompted = iff(PFAPromptCount > 0, 1, 0)
+| extend PromptsPerRequest = WasAuthPrompted + WasFormsPrompted + WasPFAPrompted
+| project CorrelationID, session_Id, PromptsPerRequest
+| where PromptsPerRequest > 0 // Some users are only getting an Error Page
+| summarize 
+    PromptsPerSession = sum(PromptsPerRequest)
+    by session_Id
+| summarize 
+    TotalSessions = count(), 
+    SessionsWith1Prompt = countif(PromptsPerSession <= 2)  // We allow 2 here because MFA and Auth Select together count as 1 prompt
+| extend PercentWith1 = (1.0 * SessionsWith1Prompt) / (1.0 * TotalSessions) * 100.0

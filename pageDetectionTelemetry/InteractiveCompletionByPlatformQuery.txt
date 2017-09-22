@@ -1,0 +1,43 @@
+Client Interactive Completion Percentage (By Platform for 1 week): 
+
+For all requests to ADFS, what percentage of those requests, per platform (Windows vs. iOS vs. Android, etc.), end up returning or erroring out? (i.e. (#succeeded + #failed) / (#started))
+
+Important filters: 
+
+    • We remove all traffic from known web crawlers, as marked by the App Insights library (using Synthetic Source) 
+    • We remove all traffic for which there is no correlation ID set 
+    • We remove all traffic that appears abnormal, meaning traffic for which there is a high page refresh or page navigation rate 
+
+Important Caveats: 
+
+    • Because we cannot guarantee what the end state of the request is, the numbers here are based on the likely outcome of the request 
+
+customEvents
+| where timestamp > ago(8d) and timestamp < ago(1d)
+| where isempty(operation_SyntheticSource)
+| where tostring(customDimensions.CorrelationID) != "NOTSET"
+| extend CleanOS = replace(@'\s', '', replace('[0-9.]+', '', client_OS))
+| summarize 
+    EventCount = count(),
+    DistinctEventCount = dcount(name),
+    EventNames = makelist(name) 
+    by CorrelationID = tostring(customDimensions.CorrelationID), CleanOS
+| where (1.0 * DistinctEventCount) / (1.0 * EventCount) >= 0.35
+| extend LikelyFormsEnded = iff(EventNames has "FormsPageEnd" and (EventNames !has "AuthSelectionPageStart" and EventNames !has "PhoneFactorWaitingStart"), 1, 0)
+| extend LikelyAuthSelectEnded = iff((EventNames has "AuthSelectionPageEnd" or EventNames has "AuthSelectionPicked") and (EventNames !has "PhoneFactorWaitingStart"), 1, 0)
+| extend LikelyPFAEnded = iff(EventNames has "PhoneFactorLatency" or EventNames has "PhoneFactorWaitingEnd", 1, 0)
+| extend LikelyErrorEnded = iff((EventNames has "ErrorPageStart" or EventNames has "ErrorDetailedPageStart") and 
+    (EventNames !has "FormsPageStart" and 
+    EventNames !has "FormsPageEnd" and 
+    EventNames !has "AuthSelectionPageStart" and 
+    EventNames !has "AuthSelectionPageEnd" and 
+    EventNames !has "PhoneFactorWaitingStart" and 
+    EventNames !has "PhoneFactorWaitingEnd"), 1, 0)
+| extend LikelyEnded = iff(LikelyFormsEnded > 0 or LikelyAuthSelectEnded > 0 or LikelyPFAEnded > 0 or LikelyErrorEnded > 0, 1, 0) 
+| project CorrelationID, LikelyEnded, CleanOS
+| summarize 
+    TotalRequests = count(), 
+    EndedRequests = countif(LikelyEnded > 0) 
+    by CleanOS
+| extend InteractiveCompletion = (1.0 * EndedRequests) / (1.0 * TotalRequests) * 100.0
+| sort by TotalRequests desc
