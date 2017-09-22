@@ -1,3 +1,7 @@
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the MIT License.
+
+
 Client Interactive Completion Percentage (By Platform for 1 week): 
 
 For all requests to ADFS, what percentage of those requests, per platform (Windows vs. iOS vs. Android, etc.), end up returning or erroring out? (i.e. (#succeeded + #failed) / (#started))
