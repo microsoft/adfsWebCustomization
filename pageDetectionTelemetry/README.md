@@ -58,9 +58,7 @@ Included in this project are a number of useful queries for tracking:
 The following documentation is useful for making changes to the ```onload.js``` code and the included queries.
 
 * [Application Insights Overview](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-overview)
-
 * [Data Analysis Overivew](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-analytics-tour)
-
 * [Custom App Insights Collection](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-api-custom-events-metrics#_flushing-data)
-
 * [App Insights in JavaScript](https://docs.microsoft.com/en-us/azure/application-insights/app-insights-javascript)
+* [App Insights JavaScript GitHub](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md)
