@@ -1,0 +1,54 @@
+Copyright (c) Microsoft Corporation. All rights reserved.
+Licensed under the MIT License.
+
+
+
+Login Reliability Percentage - By Platform for 1 week: 
+
+For all requests to ADFS, what percentage of those requests, per platform (Windows vs. iOS vs. Android, etc.), end up returning? (i.e. #succeeded / (#succeeded + failed))
+
+In this query, instead of counting a request as an ADFS failure if we ever see an error page, we only count it as a failure if we end on an error page. 
+
+Important filters: 
+
+        • We remove all traffic from known web crawlers, as marked by the App Insights library (using Synthetic Source) 
+        • We remove all traffic for which there is no correlation ID set 
+        • We remove all traffic that appears abnormal, meaning traffic for which there is a high page refresh or page navigation rate 
+
+Important Caveats: 
+
+        • Because we cannot guarantee that a request returned or did not return to EVO, the numbers here are based on the likely outcome of the request 
+        • Login reliability for ADFS includes ONLY PROMPTING requests, no silent requests are included. This leads to an expectation of having a much lower login reliability than normal
+
+customEvents
+| where timestamp > ago(8d) and timestamp < ago(1d)
+| where isempty(operation_SyntheticSource)
+| where tostring(customDimensions.CorrelationID) != "NOTSET"
+| extend CleanOS = replace(@'\s', '', replace('[0-9.]+', '', client_OS))
+| summarize 
+    EventCount = count(),
+    DistinctEventCount = dcount(name),
+    EventNames = makelist(name) 
+    by CorrelationID = tostring(customDimensions.CorrelationID), CleanOS
+| where (1.0 * DistinctEventCount) / (1.0 * EventCount) >= 0.35
+| extend LikelyFormsNotAbandoned = 
+    iff((EventNames has "FormsPageEnd" and (EventNames !has "AuthSelectionPageStart" and EventNames !has "PhoneFactorWaitingStart")) 
+        or (EventNames has "FormsPageStart" and (EventNames has "ErrorPageStart" or EventNames has "ErrorDetailedPageStart")), 1, 0)
+| extend LikelyAuthSelectNotAbandoned = iff(
+    ((EventNames has "AuthSelectionPageEnd" or EventNames has "AuthSelectionPicked" or EventNames has "AuthSelectionLatency") and (EventNames !has "PhoneFactorWaitingStart")) 
+    or (EventNames has "AuthSelectionPageStart" and (EventNames has "ErrorPageStart" or EventNames has "ErrorDetailedPageStart")), 1, 0)
+| extend LikelyPFANotAbandoned = iff(
+    (EventNames has "PhoneFactorLatency" or EventNames has "PhoneFactorWaitingEnd") or 
+    (EventNames has "PhoneFactorWaitingStart" and (EventNames has "ErrorPageStart" or EventNames has "ErrorDetailedPageStart")), 1, 0)
+| extend LikelyNotAbandoned = iff(LikelyFormsNotAbandoned > 0 or LikelyAuthSelectNotAbandoned > 0 or LikelyPFANotAbandoned > 0, 1, 0) 
+| extend WasErrorRequest = iff(EventNames has "ErrorPageStart" or EventNames has "ErrorDetailedPageStart", 1, 0)
+| extend WasEndErrorState = iff(EventNames[ toint(arraylength(EventNames) - 1) ] has "ErrorPageStart" or EventNames[ toint(arraylength(EventNames) - 1) ] has "ErrorDetailedPageStart", 1, 0)
+| project CorrelationID, EventNames, LikelyNotAbandoned, WasErrorRequest, CleanOS, WasEndErrorState 
+| summarize 
+    TotalRequests = count(), 
+    TotalErroredRequests = sum(WasEndErrorState),
+    ReturnedRequests = countif(LikelyNotAbandoned > 0) 
+    by CleanOS 
+| extend LoginReliabilityInteractive = (1.0 * ReturnedRequests) / (1.0 * ReturnedRequests + TotalErroredRequests) * 100.0
+| sort by TotalRequests desc
+
