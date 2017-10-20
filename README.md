@@ -8,7 +8,6 @@ This repository contains useful web customizations for ADFS. The following custo
 to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
 2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to mimic the look-and-feel of the
-centered AAD UI. 
 
 ## Contributing
 
