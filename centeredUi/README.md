@@ -23,7 +23,7 @@ aspects of the look-and-feel of the AAD Centered UI experience are mimicked.
 
 ## Example
 
-![Login Screenshot](/images/screenshot.png)
+![Login Screenshot](./images/screenshot.png)
 
 ## Contributing (Special Note)
 
