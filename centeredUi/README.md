@@ -1,10 +1,10 @@
-# Mimic AAD Centered Login Page 
+# Match AAD Centered Login Page 
 
 ## Overview
 
-This project provides an ADFS style sheet to allow your ADFS UI to mimic the AAD Centered UI experience. Note that this 
-customization DOES NOT currently support the paginated sign-in experience that AAD provides. However, most other 
-aspects of the look-and-feel of the AAD Centered UI experience are mimicked. 
+This project provides an ADFS style sheet to allow your ADFS UI to be consistent with the [new Azure AD Centered UI experience](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/). 
+Note that this customization DOES NOT currently support the paginated sign-in experience that AAD provides. However, most other 
+aspects of the look-and-feel of the AAD Centered UI experience are matched. 
 
 ## Getting Started 
 
