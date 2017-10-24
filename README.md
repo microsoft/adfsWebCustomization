@@ -7,7 +7,8 @@ This repository contains useful web customizations for ADFS. The following custo
 1. __[pageDetectionTelemetry](pageDetectionTelemetry)__ - JavaScript customization to detect ADFS pages and upload telemetry 
 to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
-2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to mimic the look-and-feel of the
+2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to be consistent with the look-and-feel of the
+[centered Azure AD Sign-in](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/azure-ux-web-theme-in-ad-fs)
 
 ## Contributing
 
