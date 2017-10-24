@@ -8,7 +8,7 @@ This repository contains useful web customizations for ADFS. The following custo
 to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
 2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to be consistent with the look-and-feel of the
-[centered Azure AD Sign-in](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/azure-ux-web-theme-in-ad-fs)
+[centered Azure AD Sign-in](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/)
 
 ## Contributing
 
