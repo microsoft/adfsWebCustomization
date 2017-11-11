@@ -42,6 +42,30 @@ We will break the deployment of this feature into two parts. First, the style sh
 
 5. For more information on JavaScript customization, see [Advanced ADFS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages)
 
+## Additional JavaScript Changes 
+
+The JavaScript we provide out-of-the-box does not provide two key features you may want. 
+
+1. The JavaScript only works for English deployments. If you wish to have your pages work under other languages, you will need to follow the steps below in ```Supporting Non-English Languages```
+
+2. The new paginated sign in contains a user avatar image. By default, this image is a standard empty user avatar (shown below). To support user avatar lookup, you will need to follow the steps below in ```Supporting User Avatar Lookup``` 
+
+    ![Empty User](./images/empty_user.png)
+
+## Supporting Non-English Languages 
+
+In order to support non-English languages, you will need to add translated text for the new UI items that are created by the JavaScript. 
+
+In the code, you should locate the translation table. You should add translations for the text in the translation table. 
+
+Each translation should be mapped to the correct language code. For a reference on language codes, see the ```ISO 639-1 Code``` column in the table at [this resource](https://www.loc.gov/standards/iso639-2/php/code_list.php).
+
+## Supporting User Avatar Lookup 
+
+The AAD experience includes a user avatar on the password page, on the right side of the banner. ADFS does not have support for the concept of a user avatar, so it's not possible to include this logic out-of-the-box. However, if you wish to support this behavior, you will have to build a web API that accepts the supplied username, and returns an image. You will then have to update the ```paginatedOnload.js``` code to make the request for the user avatar image, and handle the response. 
+
+The ADFS Open Source community is actively seeking help in building an open source web application to handle user avatar lookup. If you are interested in helping out, please provide a contact email by filling out [this form](https://goo.gl/forms/y2bXtTp6Xok5AKFU2).   
+
 ## Example
 
 ![Login Screenshot](./images/screenshot_paginated.png)

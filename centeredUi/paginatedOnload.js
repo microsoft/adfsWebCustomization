@@ -1,7 +1,6 @@
 function PaginatedNext()
 {
     // NOTE: You can add any custom navigation logic you want here. 
-    //  For example, if you wish to have an animated transition, that should occur here. 
 
     // Check that a username was entered correctly 
     var u = new InputUtil();
@@ -18,7 +17,7 @@ function PaginatedNext()
 function PaginatedBack()
 {
     // NOTE: You can add any custom navigation logic you want here. 
-    //  For example, if you wish to have an animated transition, that should occur here. 
+    
     ShowUsernamePage();
 }
 
@@ -35,6 +34,9 @@ function AdjustElementDisplay(elementList, display)
 
 function GetLocalizedStringForElement(element)
 {
+    // LOCALIZATION NOTE: This text is un-localized, which means it will not be displayed in your browser's
+    //  native language. Admins who wish this text to appear in different languages should add logic to set this 
+    //  value dynamically based on the value returned in the language var below 
     var nextButtonText = { "en": "Next" };
     var loginMessageText = { "en": "Enter password" };
     var backButtonText = { "en": "Back" };
@@ -208,23 +210,23 @@ function ShowPasswordPage()
     {
         passwordInput.focus();
     }
-
 }
 
-// LOCALIZATION NOTE: This text is un-localized, which means it will not be displayed in your browser's
-//  native language. Admins who wish this text to appear in different languages should add logic to set this 
-//  value dynamically based on the value returned in the language var below 
-if (document.title == 'Sign In')
+
+var usernameInput = document.getElementById("userNameInput");
+var passwordInput = document.getElementById('passwordInput');
+
+if ( usernameInput && passwordInput)
 {
     var username = document.getElementById('userNameArea');
     var passArea = document.getElementById('passwordArea');
-    var passwordInput = document.getElementById('passwordInput');
+    
     var submitButton = document.getElementById('submitButton');
     var submissionArea = document.getElementById('submissionArea');
     var errorText = document.getElementById('errorText');
     var errorDisplay = document.getElementById('error');
     var workArea = document.getElementById('workArea');
-    var usernameInput = document.getElementById("userNameInput");
+    
     var loginMessage = document.getElementById('loginMessage');
     var originalLoginMessage = "";
     var didLoadPasswordPageBefore = false;
