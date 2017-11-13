@@ -35,8 +35,8 @@ function AdjustElementDisplay(elementList, display)
 function GetLocalizedStringForElement(element)
 {
     // LOCALIZATION NOTE: This text is un-localized, which means it will not be displayed in your browser's
-    //  native language. Admins who wish this text to appear in different languages should add logic to set this 
-    //  value dynamically based on the value returned in the language var below 
+    //  native language. Admins who wish this text to appear in different languages should add the correct language 
+    //  code and translated text to each of these hash tables
     var nextButtonText = { "en": "Next" };
     var loginMessageText = { "en": "Enter password" };
     var backButtonText = { "en": "Back" };
@@ -155,12 +155,6 @@ function ShowPasswordPage()
         var loginMessageText = GetLocalizedStringForElement(loginMessage);
         loginMessage.innerHTML = loginMessageText;    
     }
-    
-    if ( submitButton )
-    {
-        submitButton.style.width = '160px';
-        submitButton.style.float = 'right';
-    }
 
     if ( idBanner )
     {
@@ -199,8 +193,12 @@ function ShowPasswordPage()
         backButton.className = "submit";
         backButton.classList.add('backButton');
         backButton.setAttribute("onclick", "PaginatedBack(); return false;");
-        submitButton.classList.add('modifiedSignIn');
-
+        
+        if ( submitButton )
+        {
+            submitButton.classList.add('modifiedSignIn');    
+        }
+        
         var backButtonText = GetLocalizedStringForElement(backButton);
         backButton.innerHTML = backButtonText;
         submissionArea.appendChild(backButton);
