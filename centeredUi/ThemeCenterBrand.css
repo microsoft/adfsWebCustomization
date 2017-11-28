@@ -152,6 +152,10 @@ body {
     background-color: transparent;
 }
 
+#loginForm {
+    width: 338px;
+}
+
 #workArea, #header {
     word-wrap: break-word;
     width: 350px;
@@ -225,6 +229,10 @@ body {
     text-size-adjust: 100%;
     width: 342px;
 }
+
+#updatePasswordForm #submitButton, #cancelButton {
+    width: 48%;
+} 
 
 #oldPasswordArea, #newPasswordArea {
     margin-bottom: 7px;
@@ -429,7 +437,7 @@ input[type="radio"], input[type="checkbox"] {
         margin-right: 0px;
         margin-top: 0px;
         max-width: 100%;
-        min-width: 167px;
+        min-width: 165px;
         overflow-x: hidden;
         overflow-y: hidden;
         padding-bottom: 4px;
@@ -447,7 +455,7 @@ input[type="radio"], input[type="checkbox"] {
         user-select: none;
         vertical-align: middle;
         white-space: nowrap;
-        width: auto;
+        width: 100%;
         word-spacing: 0px;
         writing-mode: horizontal-tb;
         -webkit-appearance: none;
@@ -653,9 +661,9 @@ h5, .tinyText {
 
 .submit.modifiedSignIn{
     display: block;
-    width: 165px;
+    width: auto;
     float: right;
-    margin-right: 13px;
+    /* margin-right: 13px;*/
 }
 
 #submissionArea{
