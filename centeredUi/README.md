@@ -13,7 +13,7 @@ aspects of the look-and-feel of the AAD Centered UI experience are matched.
 
 2. Create a custom web theme using the following command in PowerShell: 
 
-    ```New-AdfsWebTheme –Name custom –StyleSheet @{path=”c:\style\ThemeCenterBrand.css”}```
+    ```New-AdfsWebTheme –Name custom -SourceTheme default –StyleSheet @{path=”c:\style\ThemeCenterBrand.css”}```
 
 3. Apply the new custom web theme using the following command in PowerShell:
 
