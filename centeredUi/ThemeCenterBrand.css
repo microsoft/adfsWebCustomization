@@ -219,11 +219,15 @@ body {
     font-weight: normal;
     height: 52px;
     line-height: 20px;
-    margin-left: -2px;
+    margin-left: 0px;
     margin-right: -2px;
     text-align: left;
     text-size-adjust: 100%;
     width: 342px;
+}
+
+#oldPasswordArea, #newPasswordArea {
+    margin-bottom: 7px;
 }
 
 #errorMessage{
@@ -368,6 +372,10 @@ h1, h2, h3, h4, h5, label {
     margin-bottom: 25px;
 }
 
+#openingMessage {
+    margin-bottom: 4px;
+}
+
 input {
     max-width: 100%;
     font-family: inherit;
@@ -421,7 +429,7 @@ input[type="radio"], input[type="checkbox"] {
         margin-right: 0px;
         margin-top: 0px;
         max-width: 100%;
-        min-width: 100px;
+        min-width: 167px;
         overflow-x: hidden;
         overflow-y: hidden;
         padding-bottom: 4px;
@@ -439,7 +447,7 @@ input[type="radio"], input[type="checkbox"] {
         user-select: none;
         vertical-align: middle;
         white-space: nowrap;
-        width: 338px;
+        width: auto;
         word-spacing: 0px;
         writing-mode: horizontal-tb;
         -webkit-appearance: none;
