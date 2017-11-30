@@ -1,27 +1,33 @@
-# ADFS Web Customizations 
+# Match AAD Centered Login Page 
 
-## Overview 
+## Overview
 
-This repository contains useful web customizations for ADFS. The following customizations are currently included: 
+This project provides an ADFS style sheet to allow your ADFS UI to be consistent with the [new Azure AD Centered UI experience](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/). 
+Note that this customization DOES NOT currently support the paginated sign-in experience that AAD provides. However, most other 
+aspects of the look-and-feel of the AAD Centered UI experience are matched. 
 
-1. __[pageDetectionTelemetry](pageDetectionTelemetry)__ - JavaScript customization to detect ADFS pages and upload telemetry 
-to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
+## Getting Started 
 
-2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to be consistent with the look-and-feel of the
-[centered Azure AD Sign-in](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/)
+1. Download the ```ThemeCenterBrand.css``` file to your ADFS server, wherever you host your style sheets.
+    Note: It is recommended that you minify your CSS for a production environment  
 
-## Contributing
+2. Create a custom web theme using the following command in PowerShell: 
 
-This project welcomes contributions and suggestions. We encourage you to fork this project, include any web customizations
-you find useful, and then do a pull request to master. If your customizations work, we'll include them so everyone can benefit. 
+    ```New-AdfsWebTheme –Name custom -SourceTheme default –StyleSheet @{path=”c:\style\ThemeCenterBrand.css”}```
 
-Most contributions require you to agree to a Contributor License Agreement (CLA) declaring that you have the right to, and actually do, 
-grant us the rights to use your contribution. For details, visit https://cla.microsoft.com.
+3. Apply the new custom web theme using the following command in PowerShell:
 
-When you submit a pull request, a CLA-bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., label, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
+    ```Set-AdfsWebConfig -ActiveThemeName custom```
 
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+4. Update the logo and background image. For details and image size recommendations, see [this post](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/azure-ux-web-theme-in-ad-fs)
+
+## Example
+
+![Login Screenshot](./images/screenshot.png)
+
+## Contributing (Special Note)
+
+If you find any problems with the CSS (or docs), please fork and send us your fix. If you don't 
+have a fix, please open an issue, and describe what you are seeing (feel free to include screenshots).
+
+For the full Contributing details, please see __[the root README](../README.md)__.
