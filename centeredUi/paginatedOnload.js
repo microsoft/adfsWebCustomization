@@ -842,4 +842,4 @@ function SetIllustrationImage(imageUri) {
 
 // NOTE: If you wish to support the ADFS illustration (background image), you must use the following:
 // PSH> Set-AdfsWebTheme -TargetName <activeTheme> -AdditionalFileResource @{uri='/adfs/portal/images/illustration_mine.jpg';path='.\illustration_mine.jpg'}
-SetIllustrationImage('/adfs/portal/images/illustration_mine.jpg');
+// SetIllustrationImage('/adfs/portal/images/illustration_mine.jpg');
