@@ -709,7 +709,7 @@ h5, .tinyText {
         line-height: 20px;
         overflow-x: visible;
         overflow-y: visible;
-        position: relative;
+        position: fixed;
         text-align: left;
         text-size-adjust: 100%;
         width: 100%;
