@@ -647,6 +647,7 @@ function ShowUsernamePage(badUsernamePassword)
 
         var nextButtonText = GetLocalizedStringForElement(nextButton);
         nextButton.innerHTML = nextButtonText;
+        nextButton.setAttribute("role", "button");
         submissionArea.appendChild(nextButton);
     }
 
@@ -730,6 +731,7 @@ function ShowPasswordPage()
         
         var backButtonText = GetLocalizedStringForElement(backButton);
         backButton.innerHTML = backButtonText;
+        backButton.setAttribute("role", "button");
         submissionArea.appendChild(backButton);
     }
 
