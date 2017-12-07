@@ -136,7 +136,7 @@ body {
     font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
     font-weight: 300;
     font-size: 1.2rem;
-    height: 28px;
+    height: auto;
     line-height: 28px;
     margin-bottom: 16px;
     margin-left: -2px;
@@ -150,6 +150,10 @@ body {
     text-size-adjust: 100%;
     width: 342px;
     background-color: transparent;
+}
+
+#loginForm {
+    width: 338px;
 }
 
 #workArea, #header {
@@ -219,11 +223,19 @@ body {
     font-weight: normal;
     height: 52px;
     line-height: 20px;
-    margin-left: -2px;
+    margin-left: 0px;
     margin-right: -2px;
     text-align: left;
     text-size-adjust: 100%;
     width: 342px;
+}
+
+#updatePasswordForm #submitButton, #cancelButton {
+    width: 48%;
+} 
+
+#oldPasswordArea, #newPasswordArea {
+    margin-bottom: 7px;
 }
 
 #errorMessage{
@@ -368,6 +380,10 @@ h1, h2, h3, h4, h5, label {
     margin-bottom: 25px;
 }
 
+#openingMessage {
+    margin-bottom: 4px;
+}
+
 input {
     max-width: 100%;
     font-family: inherit;
@@ -421,7 +437,7 @@ input[type="radio"], input[type="checkbox"] {
         margin-right: 0px;
         margin-top: 0px;
         max-width: 100%;
-        min-width: 100px;
+        min-width: 165px;
         overflow-x: hidden;
         overflow-y: hidden;
         padding-bottom: 4px;
@@ -439,7 +455,7 @@ input[type="radio"], input[type="checkbox"] {
         user-select: none;
         vertical-align: middle;
         white-space: nowrap;
-        width: 338px;
+        width: 100%;
         word-spacing: 0px;
         writing-mode: horizontal-tb;
         -webkit-appearance: none;
@@ -608,6 +624,52 @@ h5, .tinyText {
     cursor: pointer;
 }
 
+.identityBanner{
+    color: black;
+    background: #F2F2F2;
+    text-align: right;
+    white-space: nowrap;
+    line-height: 28px;
+    height: 28px;
+    width: calc(100% - 57px);
+    margin-left: -36px;
+    padding-right: 117px;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.submit.backButton{
+    color: black;
+    width: 165px;
+    float: left;
+    background: #CCCCCC;
+    border-color: #CCCCCC;
+    margin-left: -2px;
+}
+
+.submit.nextButton{
+    margin-left: -2px;
+}
+
+.identityBannerImage {
+    position: relative;
+    float: right;
+    top: -48px;
+    left: -33px;
+}
+
+.submit.modifiedSignIn{
+    display: block;
+    width: auto;
+    float: right;
+    /* margin-right: 13px;*/
+}
+
+#submissionArea{
+    margin-top: 8px;
+}
+
 @media (max-width: 600px), (max-height: 392px){
     #content {
         /* Set content to center */
@@ -647,7 +709,7 @@ h5, .tinyText {
         line-height: 20px;
         overflow-x: visible;
         overflow-y: visible;
-        position: relative;
+        position: fixed;
         text-align: left;
         text-size-adjust: 100%;
         width: 100%;
