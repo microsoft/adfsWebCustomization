@@ -580,7 +580,7 @@ function GetLocalizedStringForElement(element)
     var language = "en";
     if ( languageAndCountry && languageAndCountry.length >= 2 )
     {
-        languageOptions = Object.keys(translationTable);
+        var languageOptions = Object.keys(translationTable);
         // Sort the codes by length, so that we match longest first 
         languageOptions.sort(function(a, b){
           return b.length - a.length;
