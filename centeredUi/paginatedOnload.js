@@ -2,6 +2,8 @@ function PaginatedNext()
 {
     // NOTE: You can add any custom navigation logic you want here. 
 
+    console.log("Enter: PaginatedNext");
+
     // Check that a username was entered correctly 
     var u = new InputUtil();
     var e = new LoginErrors();
@@ -11,29 +13,37 @@ function PaginatedNext()
         return false;
     }
     
+    console.log("[PaginatedNext] - Calling ShowPasswordPage");
     ShowPasswordPage();
 }
 
 function PaginatedBack()
 {
     // NOTE: You can add any custom navigation logic you want here. 
-    
+    console.log("Enter: PaginatedBack");
+    console.log("[PaginatedBack] - Calling ShowUsernamePage");
     ShowUsernamePage();
 }
 
 function AdjustElementDisplay(elementList, display)
 {
+    console.log("Enter: AdjustElementDisplay");
     for ( var i = 0; i < elementList.length; i++ )
     {
+        console.log("[AdjustElementDisplay] - Checking element " + i);
         if ( elementList[i] && elementList[i].style )
         {
+            console.log("[AdjustElementDisplay] - Adjusting element " + i);
             elementList[i].style.display = display;
         }
     }
+    console.log("Exit: AdjustElementDisplay");
 }
 
 function GetLocalizedStringForElement(element)
 {
+    console.log("Enter: GetLocalizedStringForElement");
+
     // LOCALIZATION NOTE: The following table allows for the translation of the text items created 
     //  within this JavaScript. Elements created client-side are not localized by ADFS, so we must 
     //  localize the text ourselves. Admins can add additional translations to this table
@@ -575,11 +585,14 @@ function GetLocalizedStringForElement(element)
                    }
         };
 
+    console.log("[GetLocalizedStringForElement] - Detecting language");
 
     var languageAndCountry = navigator.languages && navigator.languages[0] || navigator.language || navigator.userLanguage; 
     var language = "en";
     if ( languageAndCountry && languageAndCountry.length >= 2 )
     {
+        console.log("[GetLocalizedStringForElement] - languageAndCountry: " + languageAndCountry);
+
         var languageOptions = Object.keys(translationTable);
         // Sort the codes by length, so that we match longest first 
         languageOptions.sort(function(a, b){
@@ -597,6 +610,8 @@ function GetLocalizedStringForElement(element)
         }
     }
 
+    console.log("[GetLocalizedStringForElement] - language: " + language);
+
     if ( !element || !element.id )
     {
         return; 
@@ -609,22 +624,28 @@ function GetLocalizedStringForElement(element)
         returnText = translationTable[language][element.id];
     }
 
+    console.log("[GetLocalizedStringForElement] - returnText: " + returnText);
+
     return returnText;    
 }
 
 function ShowUsernamePage(badUsernamePassword)
 {
+    console.log("Enter: ShowUsernamePage");
     var nextButton = document.getElementById('nextButton');
     var backButton = document.getElementById('backButton');
     var idBanner = document.getElementById('identityBanner');
     var idBannerImage = document.getElementById('identityBannerImage');
 
+    console.log("[ShowUsernamePage] - elements detected");
     var thingsToHide = [ passArea, submitButton, backButton, idBannerImage, idBanner ];
     var thingsToShow = [ nextButton, username ];
 
     // Show/Hide elements 
     AdjustElementDisplay(thingsToHide, 'none');
     AdjustElementDisplay(thingsToShow, 'block');
+
+    console.log("[ShowUsernamePage] - elements adjusted");
 
     // Set the login message to what it was originally
     if ( loginMessage )
@@ -637,9 +658,11 @@ function ShowUsernamePage(badUsernamePassword)
         errorDisplay.style.display = 'none';
     }
     
+    console.log("[ShowUsernamePage] - checking for next button");
     // Create the 'next' button if we don't have it yet 
     if ( submissionArea && !nextButton )
     {
+        console.log("[ShowUsernamePage] - creating next button");
         var nextButton = document.createElement("span");
         nextButton.id = "nextButton";
         nextButton.className = "submit";
@@ -649,11 +672,14 @@ function ShowUsernamePage(badUsernamePassword)
         nextButton.innerHTML = nextButtonText;
         nextButton.setAttribute("role", "button");
         submissionArea.appendChild(nextButton);
+        console.log("[ShowUsernamePage] - next button created");
     }
 
+    console.log("[ShowUsernamePage] - checking if listener should be added");
     // Add 'enter' key listener to username textbox 
     if ( usernameInput && !didAddListener )
     {
+        console.log("[ShowUsernamePage] - adding listener");
         usernameInput.addEventListener("keydown", function(event) {     
             if (event.keyCode === 13) {
                 event.preventDefault();
@@ -664,14 +690,19 @@ function ShowUsernamePage(badUsernamePassword)
 
         didAddListener = true;
     }
+
+    console.log("Exit: ShowUsernamePage");
 }
 
 function ShowPasswordPage()
 {
+    console.log("Enter: ShowPasswordPage");
     var nextButton = document.getElementById('nextButton');
     var idBanner = document.getElementById('identityBanner');
     var idBannerImage = document.getElementById('identityBannerImage');
     var backButton = document.getElementById('backButton');
+
+    console.log("[ShowPasswordPage] - elements detected");
 
     var thingsToHide = [ errorDisplay, nextButton, username ];
     var thingsToShow = [ submitButton, passArea, backButton, idBanner, idBannerImage ];
@@ -679,6 +710,8 @@ function ShowPasswordPage()
     // Show/Hide elements 
     AdjustElementDisplay(thingsToHide, 'none');
     AdjustElementDisplay(thingsToShow, 'block');
+
+    console.log("[ShowPasswordPage] - elements adjusted");
 
     if ( loginMessage )
     {
@@ -691,9 +724,11 @@ function ShowPasswordPage()
         idBanner.innerHTML = usernameInput.value;
     }
 
+    console.log("[ShowPasswordPage] - checking for ID banner");
     // Create the ID Banner if we need to 
     if ( workArea && !idBanner)
     {
+        console.log("[ShowPasswordPage] - creating ID banner");
         // Create the ID banner
         var idBanner = document.createElement("div");
         idBanner.id = "identityBanner";
@@ -706,6 +741,8 @@ function ShowPasswordPage()
         image.className = "identityBannerImage";
         image.id = "identityBannerImage";
 
+        console.log("[ShowPasswordPage] - ID banner created, not added yet");
+
         // NOTE: Admins should set this source to the image host server they use. Additionally, this image should be set
         //  based on the username entered.  
         image.src = "https://auth.gfx.ms/16.000.27564.3/images/picker_account_msa.svg";
@@ -713,11 +750,16 @@ function ShowPasswordPage()
         // Add the newly-created elements 
         workArea.insertBefore(image, workArea.firstChild);
         workArea.insertBefore(idBanner, workArea.firstChild);
+
+        console.log("[ShowPasswordPage] - ID banner added");
     }
 
+    console.log("[ShowPasswordPage] - checking for back button");
     // Create the 'Back' button if we need to 
     if ( submissionArea && !backButton )
     {
+        console.log("[ShowPasswordPage] - creating back button");
+
         var backButton = document.createElement("span");
         backButton.id = "backButton";
         backButton.className = "submit";
@@ -733,20 +775,28 @@ function ShowPasswordPage()
         backButton.innerHTML = backButtonText;
         backButton.setAttribute("role", "button");
         submissionArea.appendChild(backButton);
+
+        console.log("[ShowPasswordPage] - back button added");
     }
 
     if ( passwordInput )
     {
         passwordInput.focus();
     }
+
+    console.log("Exit: ShowPasswordPage");
 }
 
+
+console.log("Begin detecting Username/Password page for pagination.");
 
 var usernameInput = document.getElementById("userNameInput");
 var passwordInput = document.getElementById('passwordInput');
 
 if ( usernameInput && passwordInput)
 {
+    console.log("Username/Password page detected.");
+
     var username = document.getElementById('userNameArea');
     var passArea = document.getElementById('passwordArea');
     
@@ -762,6 +812,7 @@ if ( usernameInput && passwordInput)
 
     if ( loginMessage )
     {
+        console.log("Saving original login message");
         originalLoginMessage = loginMessage.innerHTML;
     }
     var didAddListener = false;
@@ -769,19 +820,24 @@ if ( usernameInput && passwordInput)
     var errorIsShown = false;
     if ( errorDisplay && errorDisplay.style && errorDisplay.style.display != "none")
     {
+        console.log("Setting errorIsShown to true");
         errorIsShown = true;
     }
 
     // Show the Username page, unless a username was already entered (login hint on the request), or we have an error
     if ( usernameInput && usernameInput.value && !errorIsShown )
     {
+        console.log("Detected username/password page -- showing password page");
         ShowPasswordPage();
     }
     else 
     {
+        console.log("Detected username/password page -- showing username page");
         ShowUsernamePage(errorIsShown);
     }
 }
+
+console.log("End detecting Username/Password page for pagination.");
 
 function getStyle(element, styleProp) {
     var propStyle = null;
