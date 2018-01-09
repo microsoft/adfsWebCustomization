@@ -305,6 +305,7 @@ a {
     color: #0067b8;
     text-decoration: none;
     background-color: transparent;
+    word-wrap: normal;
 }
 
 ul {
@@ -659,11 +660,14 @@ h5, .tinyText {
     left: -33px;
 }
 
+.submitMargin.submitModified {
+    margin-bottom: 60px;
+}
+
 .submit.modifiedSignIn{
     display: block;
     width: auto;
     float: right;
-    /* margin-right: 13px;*/
 }
 
 #submissionArea{

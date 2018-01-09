@@ -1,3 +1,11 @@
+// IE doesn't support "startsWith", adding definition
+if (!String.prototype.startsWith) {
+    String.prototype.startsWith = function(searchString, position){
+        position = position || 0;
+        return this.substr(position, searchString.length) === searchString;
+    };
+}
+
 function PaginatedNext()
 {
     // NOTE: You can add any custom navigation logic you want here. 
@@ -651,6 +659,11 @@ function ShowUsernamePage(badUsernamePassword)
         submissionArea.appendChild(nextButton);
     }
 
+    if ( submissionArea )
+    {
+        submissionArea.classList.remove('submitModified');    
+    }
+
     // Add 'enter' key listener to username textbox 
     if ( usernameInput && !didAddListener )
     {
@@ -733,6 +746,11 @@ function ShowPasswordPage()
         backButton.innerHTML = backButtonText;
         backButton.setAttribute("role", "button");
         submissionArea.appendChild(backButton);
+    }
+
+    if ( submissionArea )
+    {
+        submissionArea.classList.add('submitModified');    
     }
 
     if ( passwordInput )
@@ -842,14 +860,6 @@ function SetIllustrationImage(imageUri) {
     document.getElementsByTagName("head")[0].appendChild(css);
 }
 
-// IE doesn't support "startsWith", adding definition
-if (!String.prototype.startsWith) {
-    String.prototype.startsWith = function(searchString, position){
-        position = position || 0;
-        return this.substr(position, searchString.length) === searchString;
-    };
-}
-
 // NOTE: If you wish to support the ADFS illustration (background image), you must use the following:
-// PSH> Set-AdfsWebTheme -TargetName <activeTheme> -AdditionalFileResource @{uri='/adfs/portal/images/illustration_mine.jpg';path='.\illustration_mine.jpg'}
-// SetIllustrationImage('/adfs/portal/images/illustration_mine.jpg');
+// PSH> Set-AdfsWebTheme -TargetName <activeTheme> -AdditionalFileResource @{uri='/adfs/portal/images/illustration_mine.png';path='.\illustration_mine.png'}
+// SetIllustrationImage('/adfs/portal/images/illustration_mine.png');
