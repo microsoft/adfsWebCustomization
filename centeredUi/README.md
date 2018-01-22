@@ -17,7 +17,7 @@ We will break the deployment of this feature into two parts. First, the style sh
 
 2. Create a custom web theme using the following command in PowerShell: 
 
-    ```New-AdfsWebTheme –Name custom -SourceTheme default –StyleSheet @{path=”c:\style\ThemeCenterBrand.css”}```
+    ```New-AdfsWebTheme –Name custom -SourceName default –StyleSheet @{path=”c:\style\ThemeCenterBrand.css”}```
 
 3. Apply the new custom web theme using the following command in PowerShell:
 
