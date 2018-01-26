@@ -1,0 +1,819 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: normal;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+    font-size: 0.9em;
+}
+
+#noScript {
+    margin: 16px;
+    color: Black;
+}
+
+:lang(en-GB) {
+    quotes: '\2018' '\2019' '\201C' '\201D';
+}
+
+:lang(zh) {
+    font-family: 微软雅黑;
+}
+
+@-ms-viewport {
+    width: device-width;
+}
+
+@-moz-viewport {
+    width: device-width;
+}
+
+@-o-viewport {
+    width: device-width;
+}
+
+@-webkit-viewport {
+    width: device-width;
+}
+
+@viewport {
+    width: device-width;
+}
+
+/* Theme layout styles */
+
+#fullPage {
+    position: absolute;
+    bottom: 28px;
+    top: 0px;
+    width: 100%;
+}
+
+#brandingWrapper {
+    background-color: #4488dd;
+    height: 100%;
+    width: 100%;
+}
+
+#branding {
+    /* A background image will be added to the #branding element at run-time once the illustration image is configured in the theme. 
+       Recommended image dimensions: 1420x1200 pixels, JPG or PNG, 200 kB average, 500 kB maximum. */
+    background-color: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
+#contentWrapper {
+    background-color: transparent;
+    height: 0px;
+    width: 100%;
+}
+
+#content {
+    /* Set content to center */
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    
+    background-color: #fff;
+
+    /* Set size margins */
+    margin-bottom: 28px;
+    margin-right: auto;
+    margin-left: auto;
+    min-height: 290px;
+    min-width: 320px;
+    max-width: 412px;
+    width: 338px; /*calc(100% - 40px); */
+    height: auto;
+    padding: 36px;
+   
+    /* Add drop shadow */
+    box-shadow: 0 2px 3px rgba(0,0,0,0.55);
+    border: 1px solid rgba(0,0,0,0.4);
+}
+
+#header {
+    font-size: 2em;
+    font-weight: lighter;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    padding: 0px 0px 0px 0px;
+    margin: 0px;
+    height: 24px;
+    width: 338px;
+    background-color: transparent;
+}
+
+    #header img {
+        /* Logo image recommended dimension: 108x24  or 338x24 (elongated), 4 kB average, 10 kB maximum. Transparent PNG strongly recommended. */
+        width: auto;
+        height: 100%;
+        position: relative;
+        top: -7px;
+    }
+
+#loginMessage {
+    box-sizing: border-box;
+    color: rgb(38, 38, 38);
+    direction: rtl;
+    display: block;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-weight: 300;
+    font-size: 1.2rem;
+    height: auto;
+    line-height: 28px;
+    margin-bottom: 16px;
+    margin-right: -2px;
+    margin-left: -2px;
+    margin-top: 16px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-top: 0px;
+    text-align: right;
+    text-size-adjust: 100%;
+    width: 342px;
+    background-color: transparent;
+}
+
+#loginForm {
+    width: 338px;
+}
+
+#workArea, #header {
+    word-wrap: break-word;
+    width: 350px;
+}
+
+#workArea {
+    margin-bottom: 90px;
+    margin-top: 16px;
+    background-color: transparent;
+}
+
+#footerPlaceholder {
+    height: 0px;
+}
+
+#footer {
+    background-color: rgba(0, 0, 0, 0.6);
+    bottom: 0px;
+    box-sizing: border-box;
+    clear: both;
+    color: rgb(38, 38, 38);
+    direction: rtl;
+    display: block;
+    filter: none;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 15px;
+    font-weight: normal;
+    height: 28px;
+    line-height: 20px;
+    overflow-x: visible;
+    overflow-y: visible;
+    position: fixed;
+    text-align: right;
+    text-size-adjust: 100%;
+    width: 100%;
+}
+
+#footerLinks {
+    padding-right: 10px;
+}
+
+#copyright {
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    direction: rtl;
+    display: inline-block;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 12px;
+    font-weight: normal;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 8px;
+    margin-left: 8px;
+    text-align: right;
+    text-size-adjust: 100%;
+}
+
+#userNameArea, #passwordArea {
+    box-sizing: border-box;
+    color: rgb(38, 38, 38);
+    direction: rtl;
+    display: block;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 15px;
+    font-weight: normal;
+    height: 52px;
+    line-height: 20px;
+    margin-right: 0px;
+    margin-left: -2px;
+    text-align: right;
+    text-size-adjust: 100%;
+    width: 342px;
+}
+
+#updatePasswordForm #submitButton, #cancelButton {
+    width: 48%;
+} 
+
+#oldPasswordArea, #newPasswordArea {
+    margin-bottom: 7px;
+}
+
+#errorMessage{
+    margin-top: 5px;
+}
+
+.pageLink {
+    padding-right: 5px;
+    padding-left: 5px;
+    box-sizing: border-box;
+    color: rgb(0, 0, 0);
+    direction: rtl;
+    display: inline-block;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 12px;
+    font-weight: normal;
+    height: 28px;
+    line-height: 28px;
+    margin-right: 0px;
+    margin-left: 0px;
+    text-align: right;
+    text-size-adjust: 100%;
+    text-decoration: underline;
+}
+
+/* Common content styles */
+
+.clear {
+    clear: both;
+}
+
+.float {
+    float: right;
+}
+
+.floatReverse {
+    float: left;
+}
+
+.indent {
+    margin-right: 16px;
+}
+
+.indentNonCollapsible {
+    padding-right: 16px;
+}
+
+.hidden {
+    display: none;
+}
+
+.notHidden {
+    display: inherit;
+}
+
+.error {
+    color: #e81123;
+}
+
+.actionLink {
+    margin-top: 5px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+a {
+    color: #0067b8;
+    text-decoration: none;
+    background-color: transparent;
+    word-wrap: normal;
+}
+
+ul {
+    list-style-type: disc;
+}
+
+ul, ol, dd {
+    padding: 0 16px 0 0;
+}
+
+h1, h2, h3, h4, h5, label {
+    margin-bottom: 8px;
+}
+
+.submitMargin {
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.topFieldMargin {
+    margin-top: 8px;
+}
+
+.fieldMargin {
+    margin-bottom: 8px;
+}
+
+.groupMargin {
+    margin-bottom: 0px;
+}
+
+.sectionMargin {
+    margin-bottom: 64px;
+}
+
+.block {
+    display: block;
+}
+
+.autoWidth {
+    width: auto;
+}
+
+.fullWidth {
+    width: 342px;
+}
+
+.fullWidthIndent {
+    width: 326px;
+}
+
+.smallTopSpacing {
+    margin-top: 15px;
+}
+
+.mediumTopSpacing {
+    margin-top: 25px;
+}
+
+.largeTopSpacing {
+    margin-top: 35px;
+}
+
+.smallBottomSpacing {
+    margin-bottom: 5px;
+}
+
+.mediumBottomSpacing {
+    margin-bottom: 15px;
+}
+
+.largeBottomSpacing {
+    margin-bottom: 25px;
+}
+
+#openingMessage {
+    margin-bottom: 4px;
+}
+
+input {
+    max-width: 100%;
+    font-family: inherit;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    vertical-align: middle;
+    margin-bottom: 0px;
+}
+
+    span.submit, input[type="submit"] {
+        align-items: flex-start;
+        background-color: rgb(0, 103, 184);
+        border-bottom-color: rgb(0, 103, 184);
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-image-outset: 0px;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-right-color: rgb(0, 103, 184);
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-left-color: rgb(0, 103, 184);
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-top-color: rgb(0, 103, 184);
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        direction: rtl;
+        display: inline-block;
+        font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+        font-size: 15px;
+        font-stretch: normal;
+        font-style: normal;
+        font-variant-caps: normal;
+        font-variant-ligatures: normal;
+        font-variant-numeric: normal;
+        font-weight: normal;
+        height: 36px;
+        letter-spacing: normal;
+        line-height: 25px;
+        margin-bottom: 0px;
+        margin-right: 0px;
+        margin-left: 0px;
+        margin-top: 0px;
+        max-width: 100%;
+        min-width: 165px;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        padding-bottom: 4px;
+        padding-right: 12px;
+        padding-left: 12px;
+        padding-top: 4px;
+        position: relative;
+        text-align: center;
+        text-indent: 0px;
+        text-overflow: ellipsis;
+        text-rendering: auto;
+        text-shadow: none;
+        text-size-adjust: 100%;
+        touch-action: manipulation;
+        user-select: none;
+        vertical-align: middle;
+        white-space: nowrap;
+        width: 100%;
+        word-spacing: 0px;
+        writing-mode: horizontal-tb;
+        -webkit-appearance: none;
+        -webkit-rtl-ordering: logical;
+        -webkit-border-image: none;
+    }
+
+input[type="submit"]:hover, span.submit:hover {
+    background: rgb(212, 227, 251);
+}
+
+input.text {
+    background-color: rgba(255, 255, 255, 0.4);
+    background-image: none;
+    border-bottom-color: rgba(0, 0, 0, 0.6);
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-right-color: rgba(0, 0, 0, 0.6);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-left-color: rgba(0, 0, 0, 0.6);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-top-color: rgba(0, 0, 0, 0.6);
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-sizing: border-box;
+    color: rgb(38, 38, 38);
+    cursor: auto;
+    direction: rtl;
+    display: block;
+    font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+    font-size: 15px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    height: 36px;
+    letter-spacing: normal;
+    line-height: 20px;
+    margin-bottom: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    max-width: 100%;
+    outline-color: rgb(38, 38, 38);
+    outline-style: none;
+    outline-width: 0px;
+    padding-bottom: 6px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 6px;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-size-adjust: 100%;
+    text-transform: none;
+    user-select: text;
+    width: 338px;
+    word-spacing: 0px;
+    writing-mode: horizontal-tb;
+    -webkit-appearance: none;
+    -webkit-locale: "en";
+    -webkit-rtl-ordering: logical;
+    -webkit-border-image: none;
+}
+
+input.text:focus {
+    border: 1px solid #6B6B6B;
+}
+
+select {
+    height: 28px;
+    min-width: 60px;
+    max-width: 100%;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    box-shadow: none;
+    padding: 2px;
+    font-family: inherit;
+}
+
+h1, .giantText {
+    font-size: 2.0em;
+    font-weight: lighter;
+}
+
+h2, .bigText {
+    font-size: 1.33em;
+    font-weight: lighter;
+}
+
+h3, .normalText {
+    font-size: 1.0em;
+    font-weight: normal;
+}
+
+h4, .smallText {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 0.7em;
+    font-weight: normal;
+}
+
+h5, .tinyText {
+    font-size: 0.8em;
+    font-weight: normal;
+}
+
+.hint {
+    color: #999999;
+}
+
+.emphasis {
+    font-weight: 700;
+    color: #2F2F2F;
+}
+
+.smallIcon {
+    height: 20px;
+    padding-left: 12px;
+    vertical-align: middle;
+}
+
+.largeIcon {
+    height: 48px;
+    /* width:48px; */
+    vertical-align: middle;
+}
+
+.largeTextNoWrap {
+    height: 48px;
+    display: table-cell; /* needed when in float*/
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 1.2em;
+}
+
+.idp {
+    height: 48px;
+    clear: both;
+    padding: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+    .idp:hover {
+        background-color: #cccccc;
+        cursor: pointer;
+    }
+
+.idpDescription {
+    width: 80%;
+    cursor: pointer;
+}
+
+.identityBanner{
+    color: black;
+    background: #F2F2F2;
+    text-align: left;
+    white-space: nowrap;
+    line-height: 28px;
+    height: 28px;
+    width: calc(100% - 57px);
+    margin-right: -36px;
+    padding-left: 117px;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.submit.backButton{
+    color: black;
+    width: 165px;
+    float: right;
+    background: #CCCCCC;
+    border-color: #CCCCCC;
+    margin-right: -2px;
+}
+
+.submit.nextButton{
+    margin-right: -2px;
+}
+
+.identityBannerImage {
+    position: relative;
+    float: left;
+    top: -48px;
+    right: -33px;
+}
+
+.submitMargin.submitModified {
+    margin-bottom: 60px;
+}
+
+.submit.modifiedSignIn{
+    display: block;
+    width: auto;
+    float: left;
+}
+
+#submissionArea{
+    margin-top: 8px;
+}
+
+@media (max-width: 600px), (max-height: 392px){
+    #content {
+        /* Set content to center */
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: none;
+        background-color: #fff;
+        /* Set size margins */
+        margin-bottom: 28px;
+        margin-right: auto;
+        margin-left: auto;
+        min-height: 290px;
+        min-width: 320px;
+        max-width: 412px;
+        width: calc(100% - 40px);
+        height: auto;
+        padding: 23px 18px 0px 18px;
+        /* Add drop shadow */
+        box-shadow: 0 0 0 rgba(0,0,0,0);
+        border: 0px solid rgba(0,0,0,0);
+    }
+
+    #footer {
+        background-color: rgba(0, 0, 0, 0.6);
+        bottom: 0px;
+        box-sizing: border-box;
+        clear: both;
+        color: rgb(38, 38, 38);
+        direction: rtl;
+        display: block;
+        filter: none;
+        font-family: "Segoe UI Webfont", -apple-system, "Helvetica Neue", "Lucida Grande", Roboto, Ebrima, "Nirmala UI", Gadugi, "Segoe Xbox Symbol", "Segoe UI Symbol", "Meiryo UI", "Khmer UI", Tunga, "Lao UI", Raavi, "Iskoola Pota", Latha, Leelawadee, "Microsoft YaHei UI", "Microsoft JhengHei UI", "Malgun Gothic", "Estrangelo Edessa", "Microsoft Himalaya", "Microsoft New Tai Lue", "Microsoft PhagsPa", "Microsoft Tai Le", "Microsoft Yi Baiti", "Mongolian Baiti", "MV Boli", "Myanmar Text", "Cambria Math";
+        font-size: 15px;
+        font-weight: normal;
+        height: 28px;
+        line-height: 20px;
+        overflow-x: visible;
+        overflow-y: visible;
+        position: fixed;
+        text-align: right;
+        text-size-adjust: 100%;
+        width: 100%;
+    }
+
+    #brandingWrapper {
+        display: none;
+    }
+}
+
+/* Targets displays using any of Windows’ High Contrast Mode themes: */
+@media screen and (-ms-high-contrast: active) {
+    textarea::-webkit-input-placeholder {
+        color: #00FF00;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #00FF00;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #00FF00;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #00FF00;
+    }
+}
+
+/* Targets displays using the Windows’ "High Contrast Black" theme: */
+@media screen and (-ms-high-contrast: white-on-black) {
+    #contentWrapper {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    .idp:hover {
+        background-color: #ffffff;
+        color: #000000;
+    }
+    #brandingWrapper {
+        background-color: #000000;
+        color: #ffffff;
+    }
+    html, body {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #ffffff;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #ffffff;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #ffffff;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #ffffff;
+    }
+}
+
+/* Targets displays using the Windows’ "High Contrast White" theme: */
+@media screen and (-ms-high-contrast: black-on-white) {
+    #contentWrapper {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    .idp:hover {
+        background-color: #000000;
+        color: #ffffff;
+    }
+
+    #brandingWrapper {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    html, body {
+        background-color: #ffffff;
+        color: #000000;
+    }
+
+    textarea::-webkit-input-placeholder {
+        color: #000000;
+    }
+
+    textarea:-moz-placeholder { /* Firefox 18- */
+        color: #000000;
+    }
+
+    textarea::-moz-placeholder { /* Firefox 19+ */
+        color: #000000;
+    }
+
+    textarea:-ms-input-placeholder {
+        color: #000000;
+    }
+}
