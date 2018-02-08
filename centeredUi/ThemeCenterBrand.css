@@ -115,7 +115,7 @@ body {
     font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
     padding: 0px 0px 0px 0px;
     margin: 0px;
-    height: 24px;
+    height: 36px;
     width: 338px;
     background-color: transparent;
 }
@@ -158,11 +158,10 @@ body {
 
 #workArea, #header {
     word-wrap: break-word;
-    width: 350px;
 }
 
 #workArea {
-    margin-bottom: 90px;
+    margin-bottom: 4%;
     margin-top: 16px;
     background-color: transparent;
 }
@@ -464,9 +463,11 @@ input[type="radio"], input[type="checkbox"] {
         -webkit-border-image: none;
     }
 
-input[type="submit"]:hover, span.submit:hover {
-    background: rgb(212, 227, 251);
-}
+    input[type="submit"]:hover, span.submit:hover {
+        background: rgb(0, 85, 152);
+        border: 1px solid rgb(0, 85, 152);
+    }    
+
 
 input.text {
     background-color: rgba(255, 255, 255, 0.4);
@@ -648,6 +649,11 @@ h5, .tinyText {
     border-color: #CCCCCC;
     margin-left: -2px;
 }
+  
+    input[type="submit"].backButton:hover, span.submit.backButton:hover {
+        background: #AAA;
+        border: 1px solid #AAA;
+    }
 
 .submit.nextButton{
     margin-left: -2px;
