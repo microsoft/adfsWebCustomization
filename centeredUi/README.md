@@ -38,7 +38,7 @@ We will break the deployment of this feature into two parts. First, the style sh
 
 3. Apply the modified custom web theme using the following command in PowerShell:
 
-    ```Set-AfsWebConfig -ActiveThemeName custom```
+    ```Set-AdfsWebConfig -ActiveThemeName custom```
 
 4. For more information on JavaScript customization, see [Advanced AD FS Customization](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages).
 
