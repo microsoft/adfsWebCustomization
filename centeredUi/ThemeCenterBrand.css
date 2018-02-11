@@ -634,14 +634,14 @@ h5, .tinyText {
     line-height: 28px;
     height: 28px;
     margin:16px -36px;
-    padding:0px 100px 1px 40px;
+    padding:0px 100px 0px 40px;
     font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
     font-size: 15px;
     font-weight: 300;
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
-    text-overflow:    ellipsis;    
+    text-overflow: ellipsis;    
 }
 .identityBannerImage {
  height:48px;
@@ -649,7 +649,10 @@ h5, .tinyText {
  margin-top:-17px;
  margin-right: -26px;
  overflow:hidden;
- float:right
+ position: relative;
+ float: right;
+ top: -48px;
+ left: -33px;
 }
 
 .submit.backButton{
@@ -668,13 +671,6 @@ h5, .tinyText {
 
 .submit.nextButton{
     margin-left: -2px;
-}
-
-.identityBannerImage {
-    position: relative;
-    float: right;
-    top: -48px;
-    left: -33px;
 }
 
 .submitMargin.submitModified {
@@ -738,6 +734,19 @@ h5, .tinyText {
 
     #brandingWrapper {
         display: none;
+    }
+
+    input.text {
+        font-size: 16px;
+    }
+    
+    .identityBanner {
+        margin:16px 0px;
+        padding:0px 80px 0px 40px;    
+    }
+    
+    .identityBannerImage {
+        left: -50px;   
     }
 }
 
