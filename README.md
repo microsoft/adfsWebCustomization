@@ -10,6 +10,8 @@ to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/
 2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to be consistent with the look-and-feel of the
 [centered Azure AD Sign-in](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/)
 
+3. __[mfaLoadingWheel](mfaLoadingWheel)__ - JavaScript customization to add a loading wheel to the ADFS authentication options page.
+
 ## Contributing
 
 This project welcomes contributions and suggestions. We encourage you to fork this project, include any web customizations
