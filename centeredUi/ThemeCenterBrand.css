@@ -78,6 +78,16 @@ body {
     -o-background-size: cover;
 }
 
+#brandingTint {
+    /* This will define a tint to be overlaid on top of the illustration background image. */
+    background-color: rgba(0,0,0,0.4);
+    height: 100%;
+    width: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+}
+
 #contentWrapper {
     background-color: transparent;
     height: 0px;

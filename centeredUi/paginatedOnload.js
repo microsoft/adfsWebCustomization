@@ -868,6 +868,16 @@ if (!String.prototype.startsWith) {
     };
 }
 
+// Create new div to handle background tint overlay
+var tintDiv = document.createElement('div');
+tintDiv.id = 'brandingTint';
+tintDiv.class = 'illustrationClass';
+// Locate branding div and apply add tintDiv as child
+var brandingDiv = document.getElementById('branding');
+if (brandingDiv) {
+    brandingDiv.appendChild(tintDiv);
+}
+
 // NOTE: If you wish to support the ADFS illustration (background image), you must use the following:
 // PSH> Set-AdfsWebTheme -TargetName <activeTheme> -AdditionalFileResource @{uri='/adfs/portal/images/illustration_mine.png';path='.\illustration_mine.png'}
 // SetIllustrationImage('/adfs/portal/images/illustration_mine.png');
