@@ -1,6 +1,5 @@
 function AuthSelectionPageSubmitCallback()
 {
-    
     if (!document.getElementById("loadWheel"))
     {
         var divToAppendTo = document.getElementById("authArea");
@@ -13,6 +12,14 @@ function AuthSelectionPageSubmitCallback()
         // Add the loader to the HTML page 
         if ( divToAppendTo && loader )
         {
+            var azureOption = document.getElementById('WindowsAzureMultiFactorAuthentication');
+            if(azureOption){
+                var newLink = document.createElement("a");
+                newLink.innerHTML = azureOption.innerHTML;
+                newLink.style.color = "#C8C8C8";
+                azureOption.style.display = 'none';
+                divToAppendTo.appendChild(newLink);
+            }
             divToAppendTo.appendChild(loader);
         }
     }
