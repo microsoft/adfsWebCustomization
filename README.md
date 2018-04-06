@@ -1,16 +1,18 @@
-# ADFS Web Customizations 
+# AD FS Web Customizations 
 
 ## Overview 
 
-This repository contains useful web customizations for ADFS. The following customizations are currently included: 
+This repository contains useful web customizations for AD FS. The following customizations are currently included: 
 
-1. __[pageDetectionTelemetry](pageDetectionTelemetry)__ - JavaScript customization to detect ADFS pages and upload telemetry 
+1. __[pageDetectionTelemetry](pageDetectionTelemetry)__ - JavaScript customization to detect AD FS pages and upload telemetry 
 to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/application-insights/) datastore. 
 
-2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem ADFS to be consistent with the look-and-feel of the
+2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem AD FS to be consistent with the look-and-feel of the
 [centered Azure AD Sign-in](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/)
 
-3. __[mfaLoadingWheel](mfaLoadingWheel)__ - JavaScript customization to add a loading wheel to the ADFS authentication options page.
+3. __[mfaLoadingWheel](mfaLoadingWheel)__ - JavaScript customization to add a loading wheel to the AD FS authentication options page.
+
+4. __[communityCustomizations](communityCustomizations)__ - JavaScript customizations from community members and AD FS customers.  
 
 ## Contributing
 
