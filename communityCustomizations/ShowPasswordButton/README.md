@@ -13,6 +13,9 @@ To add "Show password" button do the following:
 
 2. Apply the customization according to https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/advanced-customization-of-ad-fs-sign-in-pages  
 
- 
+### Example
+![Button added](/images/Customization1.png)
+![Password shown on mouse click](/images/Customization2.png)
+
 ## Special thanks to Matthew Bongiovi for sharing the code
 

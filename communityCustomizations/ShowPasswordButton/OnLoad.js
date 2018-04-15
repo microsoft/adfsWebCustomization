@@ -1,8 +1,8 @@
 var inputArea = document.getElementById("inputArea");
 
 if(inputArea){
-     console.log("hello");
-     var showButton = document.createElement("div");
+ console.log("hello");
+ var showButton = document.createElement("div");
  showButton.id = "showButton";  
  showButton.innerHTML = "Show password";
  inputArea.appendChild(showButton);
