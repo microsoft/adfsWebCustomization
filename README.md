@@ -12,7 +12,7 @@ to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/
 
 3. __[mfaLoadingWheel](mfaLoadingWheel)__ - JavaScript customization to add a loading wheel to the AD FS authentication options page.
 
-4. __[communityCustomizations](communityCustomizations)__ - JavaScript customizations from community members and AD FS customers.  
+4. __[communityCustomizations](communityCustomizations)__ - JavaScript customizations from community members.
 
 ## Contributing
 

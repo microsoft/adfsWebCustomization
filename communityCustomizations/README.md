@@ -19,7 +19,7 @@ To add your customizations, please do the following:
 
 ## Customizations
 
-None yet 
+1. __[ShowPasswordButton](ShowPasswordButton)__ - A customization to allow users to click "show password" when entering their password on an AD FS page
 
 ## Contributing (Special Note)
 
