@@ -650,7 +650,7 @@ function ShowUsernamePage(badUsernamePassword)
     {
         var nextButton = document.createElement("span");
         nextButton.id = "nextButton";
-        nextButton.className = "submit";
+        nextButton.className = "submit nextButton";
         nextButton.setAttribute("onclick", "PaginatedNext(); return false;");
 
         var nextButtonText = GetLocalizedStringForElement(nextButton);
@@ -712,19 +712,8 @@ function ShowPasswordPage()
         idBanner.id = "identityBanner";
         idBanner.className = "identityBanner";
         idBanner.innerHTML = usernameInput.value;
-
-        // Create the ID banner user avatar image 
-        var image = document.createElement("img");
-        image.role = "presentation";
-        image.className = "identityBannerImage";
-        image.id = "identityBannerImage";
-
-        // NOTE: Admins should set this source to the image host server they use. Additionally, this image should be set
-        //  based on the username entered.  
-        image.src = "https://auth.gfx.ms/16.000.27564.3/images/picker_account_msa.svg";
         
-        // Add the newly-created elements 
-        workArea.insertBefore(image, workArea.firstChild);
+        // Add the newly-created element
         workArea.insertBefore(idBanner, workArea.firstChild);
     }
 

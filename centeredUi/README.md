@@ -48,10 +48,6 @@ The JavaScript we provide out-of-the-box does not provide two key features you m
 
 1. The JavaScript works for deployments in most major languages. However, if you wish to have your pages work under other languages, you will need to follow the steps below in ```Supporting Non-English Languages```.
 
-2. The new paginated sign in contains a user avatar image. By default, this image is a standard empty user avatar (shown below). To support user avatar lookup, you will need to follow the steps below in ```Supporting User Avatar Lookup```.
-
-    ![Empty User](./images/empty_user.png)
-
 ## Supporting Non-English Languages
 
 In order to support non-English languages, you will need to add translated text for the new UI items that are created by the JavaScript.
@@ -60,15 +56,9 @@ In the code, you should locate the translation table in the function ```GetLocal
 
 Each translation should be mapped to the correct language code. For a reference on language codes, see the ```ISO 639-1 Code``` column in the table at [this resource](https://www.loc.gov/standards/iso639-2/php/code_list.php).
 
-## Supporting User Avatar Lookup
-
-The Azure AD experience includes a user avatar on the password page, on the right side of the banner. AD FS does not have support for the concept of a user avatar, so it's not possible to include this logic out-of-the-box. If you wish to support this behavior, you will have to build a web API that accepts a username, and returns an image. You will then have to update the ```paginatedOnload.js``` code to make the request for the user avatar image, and handle the response.
-
-If you are interested in working with the AD FS Open Source community to build a user avatar web app, please contact mattbo@microsoft.com.
-
 ## Example
 
-![Login Screenshot](./images/screenshot_paginated.png)
+![Login Screenshot](./images/screenshot_paginated2.png)
 
 ## Contributing (Special Note)
 
