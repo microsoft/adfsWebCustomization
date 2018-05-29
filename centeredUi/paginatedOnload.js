@@ -701,7 +701,7 @@ function ShowPasswordPage()
 
     if ( idBanner )
     {
-        idBanner.innerHTML = usernameInput.value;
+        idBanner.innerText = usernameInput.value;
     }
 
     // Create the ID Banner if we need to 
@@ -711,7 +711,7 @@ function ShowPasswordPage()
         var idBanner = document.createElement("div");
         idBanner.id = "identityBanner";
         idBanner.className = "identityBanner";
-        idBanner.innerHTML = usernameInput.value;
+        idBanner.innerText = usernameInput.value;
         
         // Add the newly-created element
         workArea.insertBefore(idBanner, workArea.firstChild);
