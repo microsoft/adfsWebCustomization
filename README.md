@@ -10,9 +10,18 @@ to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/
 2. __[centeredUi](centeredUi)__ - CSS customization to allow your on-prem AD FS to be consistent with the look-and-feel of the
 [centered Azure AD Sign-in](https://cloudblogs.microsoft.com/enterprisemobility/2017/08/02/the-new-azure-ad-signin-experience-is-now-in-public-preview/)
 
+    __![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Action Required__
+
+    If you use the paginated onload.js web customization to create a paginated experience on your AD FS server, please update to the latest version. If you deployed the onload.js on or before __May 29, 2018__, please update your deployment. 
+
 3. __[mfaLoadingWheel](mfaLoadingWheel)__ - JavaScript customization to add a loading wheel to the AD FS authentication options page.
 
 4. __[communityCustomizations](communityCustomizations)__ - JavaScript customizations from community members.
+
+## Usage 
+
+If you use any of our open source tools or projects, please consider subscribing to our announcements newsletter. We use this list to provide updates on security bugs, new feature announcements, and other info directly relevant to our users.
+Sign up here:  http://eepurl.com/dwF5gP 
 
 ## Contributing
 
