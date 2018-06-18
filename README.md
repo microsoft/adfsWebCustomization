@@ -21,7 +21,8 @@ to your [Azure Application Insights](https://azure.microsoft.com/en-us/services/
 ## Usage 
 
 If you use any of our open source tools or projects, please consider subscribing to our announcements newsletter. We use this list to provide updates on security bugs, new feature announcements, and other info directly relevant to our users.
-Sign up here:  http://eepurl.com/dwF5gP 
+
+[Sign up here](http://eepurl.com/dwF5gP)
 
 ## Contributing
 
