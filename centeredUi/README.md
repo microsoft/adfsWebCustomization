@@ -6,6 +6,10 @@ This project provides an Active Directory Federation Services (AD FS) style shee
 
 Note that this customization comes in two parts. The first is a style sheet, which allows the look-and-feel of your AD FS to match the Azure AD centered UI experience. The second is a more advanced customization, using the AD FS JavaScript customization feature to create a front-end paginated sign-in experience.
 
+## ![#f03c15](https://placehold.it/15/f03c15/000000?text=+) Action Required
+
+If you use the paginated onload.js web customization to create a paginated experience on your AD FS server, please update to the latest version. If you deployed the onload.js on or before __May 29, 2018__, please update your deployment. 
+
 ## Getting Started
 
 We will break the deployment of this feature into two parts. First, the style sheet to create a consistent look-and-feel. Second, the JavaScript to create a front-end paginated experience. You can choose if you wish to deploy one or both.
