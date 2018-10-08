@@ -2,7 +2,7 @@
 // Works with IE, Edge, Chrome, Firefox, Safari
 if (document.getElementById("hrdArea")) {
 	if (document.getElementById("hrd")) {
-		var strCPTrustADDisplayName = "<REPLACE THIS WITH THE DISPLAY NAME OF YOUR CHOOSING>";
+		var strCPTrustADDisplayName = "<!!! REPLACE THIS WITH THE DISPLAY NAME OF YOUR CHOOSING !!!>";
 		var idp = document.getElementsByClassName("idp");
 		var totalIdPElements = idp.length;
 		var listAllSpanForIdpIcon = document.getElementsByClassName("largeIcon float");
