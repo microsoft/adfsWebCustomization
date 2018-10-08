@@ -1,4 +1,4 @@
-# Rename & Reorder AD CP Trust In ADFS 2016 FARM LEVEL & Higher
+# Rename & Reorder AD CP Trust In ADFS 2016 Farm Level & Up
 
 ## Overview
 
