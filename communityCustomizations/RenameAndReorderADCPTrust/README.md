@@ -8,6 +8,6 @@ This project contains an `ONLOAD.JS` script for renaming and reordering the Acti
 
 To add "Show password" button do the following: 
 
-1. Add the code from the `onload.js` to your webtheme `onload.js`
+1. Add the code from the `ONLOAD.JS` to your webtheme `ONLOAD.JS`
 
 2. For more information and examples, please see: https://jorgequestforknowledge.wordpress.com/2018/10/09/changing-ad-cp-trust-display-name-and-order-in-adfs-2016/
