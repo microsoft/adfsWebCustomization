@@ -4,7 +4,7 @@
 
 This project contains an `ONLOAD.JS` script for renaming and reordering the Active Directory (AD) CP Trust. After raising the farm level to at least ADFS 2016, the order of the CP Trust list is updated whereas the AD CP trust is moved to the bottom and it does not inherit the display name of the federation service. It just shows "Active Directory". This piece of code, fixes the order of the CP trust list and it allows to to specify a custom display name for the AD CP trust.
 
-## Applying the customization
+## Applying The Customization
 
 To add "Show password" button do the following: 
 
