@@ -2,7 +2,7 @@
 // Works with IE, Edge, Chrome, Firefox, Safari
 if (document.getElementById("hrdArea")) {
 	if (document.getElementById("hrd")) {
-		var strCPTrustADDisplayName = "<!!! REPLACE THIS WITH THE DISPLAY NAME OF YOUR CHOOSING !!!>";
+		var strCPTrustADDisplayName = "IAM Technologies";
 		var idp = document.getElementsByClassName("idp");
 		var totalIdPElements = idp.length;
 		var listAllSpanForIdpIcon = document.getElementsByClassName("largeIcon float");
@@ -15,12 +15,12 @@ if (document.getElementById("hrdArea")) {
 				listAllSpanForIdpIcon[i].alt = strCPTrustADDisplayName;
 				listAllSpanForIdpDescription[i].innerHTML = "<span class=\"largeTextNoWrap indentNonCollapsible\">" + strCPTrustADDisplayName + "</span>";
 				adAuthorityElementIsPresent = true;
+				var adAuthorityElementIDnr = i;
 			}
 		}
 
 		if ((totalIdPElements > 1) && (adAuthorityElementIsPresent)) {
-			var lastIdPElementNr = totalIdPElements - 1;
-			idp[lastIdPElementNr].parentNode.insertBefore(idp[lastIdPElementNr], idp[0]);
+			idp[adAuthorityElementIDnr].parentNode.insertBefore(idp[adAuthorityElementIDnr], idp[0]);
 		}
 	}
 }
