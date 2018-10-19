@@ -644,8 +644,7 @@ h5, .tinyText {
     white-space: nowrap;
     overflow: hidden;
     -o-text-overflow: ellipsis;
-    text-overflow: ellipsis;    
-    padding-left:20px;
+    text-overflow: ellipsis;
 }
 
 .submit.backButton{
