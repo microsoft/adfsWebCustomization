@@ -2,7 +2,9 @@
 // Works with IE, Edge, Chrome, Firefox, Safari
 if (document.getElementById("hrdArea")) {
 	if (document.getElementById("hrd")) {
-		var strCPTrustADDisplayName = "IAM Technologies";
+		// THE NEXT LINE SHOULD BE UPDATED TO SPECIFY THE NAME DISPLAYED ON THE ADFS HED PAGE
+		var strCPTrustADDisplayName = "<REPLACE THIS WITH THE NAME YOU WANT TO DISPLAY ON THE HRD PAGE>";
+		// THE LINE ABOVE SHOULD BE UPDATED TO SPECIFY THE NAME DISPLAYED ON THE ADFS HED PAGE
 		var idp = document.getElementsByClassName("idp");
 		var totalIdPElements = idp.length;
 		var listAllSpanForIdpIcon = document.getElementsByClassName("largeIcon float");
