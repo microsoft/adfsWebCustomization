@@ -6,8 +6,8 @@ This project contains an `ONLOAD.JS` script for renaming and reordering the Acti
 
 ## Applying The Customization
 
-To add "Show password" button do the following: 
+To change the name of the AD CP trust on the HRD page and put it back at the top again when the farm level is at least ADFS 2016, do the following: 
 
-1. Add the code from the `ONLOAD.JS` to your webtheme `ONLOAD.JS`
+1. Add the code from the `ONLOAD.JS` to the `ONLOAD.JS` of your own ADFS farm
 
 2. For more information and examples, please see: https://jorgequestforknowledge.wordpress.com/2018/10/09/changing-ad-cp-trust-display-name-and-order-in-adfs-2016/
