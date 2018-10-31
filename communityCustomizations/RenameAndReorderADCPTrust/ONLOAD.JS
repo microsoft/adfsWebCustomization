@@ -13,7 +13,10 @@ if (document.getElementById("hrdArea")) {
 
 		var i;
 		for (i = 0; i < listAllSpanForIdpDescription.length; i++) {
-			if (listAllSpanForIdpDescription[i].innerText == "Active Directory") {
+			// IN THE LINE BELOW, IF NEEDED, SPECIFY THE LOCALIZED NAME OF AD. TO BE CERTAIN CHECK THE NAME OF THE AD CP TRUST
+			var languageBasedADname = "Active Directory";
+			// IN THE LINE ABOVE, IF NEEDED, SPECIFY THE LOCALIZED NAME OF AD. TO BE CERTAIN CHECK THE NAME OF THE AD CP TRUST
+			if (listAllSpanForIdpDescription[i].innerText == languageBasedADname) {
 				listAllSpanForIdpIcon[i].alt = strCPTrustADDisplayName;
 				listAllSpanForIdpDescription[i].innerHTML = "<span class=\"largeTextNoWrap indentNonCollapsible\">" + strCPTrustADDisplayName + "</span>";
 				adAuthorityElementIsPresent = true;
