@@ -5,13 +5,13 @@
 // Telemetry Manager is the App Insights telemetry management object
 // Callers MUST call 'Initialize' before using the 'ProducePageDetectionTelemetry' method
 //
-TelemetryManager = {
+var TelemetryManager = {
 
     /*
      * Initialize the app state for the current page 
      */ 
     Initialize: function () {
-        _self = this;
+        var _self = this;
 
         // Collect some page details for later 
         var NOT_SET_CONST = 'NOTSET';
@@ -80,7 +80,7 @@ TelemetryManager = {
         if (!results) return "";
         if (!results[2]) return "";
         return decodeURIComponent(results[2].replace(/\+/g, " "));
-    }
+    },
 
     /*
      *  Produces all telemetry for the following pages: 
