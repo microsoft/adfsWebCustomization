@@ -19,7 +19,7 @@ namespace Digitude.Adfs.CustomImagesThemeGenerator
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.Text += $" [-v{Assembly.GetExecutingAssembly().GetName().Version}]";
+            this.Text += $" [v{Assembly.GetExecutingAssembly().GetName().Version}]";
             dataGridView.Columns[0].Width = 100;
             dataGridView.Columns[1].Width = 200;
             dataGridView.Columns[2].Width = 200;
