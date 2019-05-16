@@ -20,6 +20,7 @@ To add your customizations, please do the following:
 ## Customizations
 
 1. __[ShowPasswordButton](ShowPasswordButton)__ - A customization to allow users to click "show password" when entering their password on an AD FS page
+2. __[CustomImagesThemeGenerator](CustomImagesThemeGenerator)__ - A GUI to build a list of custom images for the claim provider trusts on the AD FS home realm selection page.
 
 ## Contributing (Special Note)
 
