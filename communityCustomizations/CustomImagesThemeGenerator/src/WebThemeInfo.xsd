@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="WebThemeInfo" targetNamespace="http://tempuri.org/WebThemeInfo.xsd" xmlns:mstns="http://tempuri.org/WebThemeInfo.xsd" xmlns="http://tempuri.org/WebThemeInfo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="WebThemeInfo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="WebThemeInfo" msprop:Generator_UserDSName="WebThemeInfo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="IdentityProviderInfo" msprop:Generator_TableClassName="IdentityProviderInfoDataTable" msprop:Generator_TableVarName="tableIdentityProviderInfo" msprop:Generator_RowChangedName="IdentityProviderInfoRowChanged" msprop:Generator_TablePropName="IdentityProviderInfo" msprop:Generator_RowDeletingName="IdentityProviderInfoRowDeleting" msprop:Generator_RowChangingName="IdentityProviderInfoRowChanging" msprop:Generator_RowEvHandlerName="IdentityProviderInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="IdentityProviderInfoRowDeleted" msprop:Generator_RowClassName="IdentityProviderInfoRow" msprop:Generator_UserTableName="IdentityProviderInfo" msprop:Generator_RowEvArgName="IdentityProviderInfoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DisplayName" msprop:Generator_ColumnVarNameInTable="columnDisplayName" msprop:Generator_ColumnPropNameInRow="DisplayName" msprop:Generator_ColumnPropNameInTable="DisplayNameColumn" msprop:Generator_UserColumnName="DisplayName" type="xs:string" minOccurs="0" />
+              <xs:element name="ImageLocation" msprop:Generator_ColumnVarNameInTable="columnImageLocation" msprop:Generator_ColumnPropNameInRow="ImageLocation" msprop:Generator_ColumnPropNameInTable="ImageLocationColumn" msprop:Generator_UserColumnName="ImageLocation" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayNameFR" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DisplayNameFR" msprop:Generator_ColumnVarNameInTable="columnDisplayNameFR" msprop:Generator_ColumnPropNameInTable="DisplayNameFRColumn" msprop:Generator_UserColumnName="DisplayNameFR" type="xs:string" minOccurs="0" />
+              <xs:element name="DisplayNameNL" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DisplayNameNL" msprop:Generator_ColumnVarNameInTable="columnDisplayNameNL" msprop:Generator_ColumnPropNameInTable="DisplayNameNLColumn" msprop:Generator_UserColumnName="DisplayNameNL" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ThemeInfo" msprop:Generator_TableClassName="ThemeInfoDataTable" msprop:Generator_TableVarName="tableThemeInfo" msprop:Generator_RowChangedName="ThemeInfoRowChanged" msprop:Generator_TablePropName="ThemeInfo" msprop:Generator_RowDeletingName="ThemeInfoRowDeleting" msprop:Generator_RowChangingName="ThemeInfoRowChanging" msprop:Generator_RowEvHandlerName="ThemeInfoRowChangeEventHandler" msprop:Generator_RowDeletedName="ThemeInfoRowDeleted" msprop:Generator_RowClassName="ThemeInfoRow" msprop:Generator_UserTableName="ThemeInfo" msprop:Generator_RowEvArgName="ThemeInfoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
