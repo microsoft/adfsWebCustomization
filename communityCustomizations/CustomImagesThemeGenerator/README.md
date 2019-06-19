@@ -53,7 +53,7 @@ The cmdlets we will use are:
 Tooling
 -------
 
-Although the concept of performing these kind of updates is not difficult, the mere fact that the ADFS webtheme cmdlets have to be invoked using references to external resources make it an repetitive and error prone task. To avoid this I have created a very small RAD utility that can speed up dramatically this task, even more if there are a lot of identity providers on the home realm detection page.
+Although the concept of performing these kind of updates is not difficult, the mere fact that the ADFS webtheme cmdlets have to be invoked using references to external resources makes it an repetitive and error prone task. To avoid this I have created a very small RAD utility that can speed up dramatically this task, even more if there are a lot of identity providers on the home realm detection page.
 
 ![](images/9544fd2a4ad07f3956b38493ab2d3453.png)
 
