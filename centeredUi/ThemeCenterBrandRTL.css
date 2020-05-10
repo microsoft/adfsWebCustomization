@@ -107,6 +107,10 @@ body {
     /* Add drop shadow */
     box-shadow: 0 2px 3px rgba(0,0,0,0.55);
     border: 1px solid rgba(0,0,0,0.4);
+
+    /* Allow Scrolling */
+    overflow-y: auto;
+    max-height: 80%;
 }
 
 #header {
@@ -698,6 +702,10 @@ h5, .tinyText {
         /* Add drop shadow */
         box-shadow: 0 0 0 rgba(0,0,0,0);
         border: 0px solid rgba(0,0,0,0);
+
+        /* Allow Scrolling */
+        overflow-y: initial;
+        max-height: initial;
     }
 
     #footer {
